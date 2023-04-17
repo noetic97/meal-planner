@@ -1,6 +1,5 @@
 import { DataSource } from "typeorm";
 import logger from "./logger";
-// import { books } from "../models";
 
 export default async function initConnection() {
   const connectionString =
@@ -10,7 +9,7 @@ export default async function initConnection() {
   const appDataSource = new DataSource({
     type: "mongodb",
     url: connectionString,
-    database: process.env.MONGO_DB_NAME || "voc",
+    database: process.env.MONGO_DB_NAME || "meal_planner",
     useUnifiedTopology: true,
     synchronize: true,
     entities: [],
